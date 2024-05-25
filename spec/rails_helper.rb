@@ -1,7 +1,10 @@
 require 'spec_helper'
+require 'vcr'
+
 ENV['RAILS_ENV'] ||= 'test'
+
 require_relative '../config/environment'
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 
 Rails.root.glob('spec/support/**/*.rb').sort.each { |f| require f }
@@ -22,7 +25,6 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.filter_rails_from_backtrace!
-
 end
 
 Shoulda::Matchers.configure do |config|
@@ -30,4 +32,9 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'fixtures/vcr_cassettes'
+  config.hook_into :webmock
 end
