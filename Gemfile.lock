@@ -132,7 +132,6 @@ GEM
       railties (>= 5.0.0)
     faker (3.3.1)
       i18n (>= 1.8.11, < 2)
-    foreman (0.88.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -292,6 +291,9 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (6.2.0)
       activesupport (>= 5.2.0)
+    simple_form (5.3.1)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -358,7 +360,6 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
-  foreman
   importmap-rails
   jbuilder
   pg
@@ -369,6 +370,7 @@ DEPENDENCIES
   rubocop
   selenium-webdriver
   shoulda-matchers
+  simple_form
   simplecov
   sprockets-rails
   stimulus-rails
